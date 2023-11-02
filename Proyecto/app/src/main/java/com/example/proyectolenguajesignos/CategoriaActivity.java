@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ public class CategoriaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewCategoria);
 
         List<Categoria> categorias=new ArrayList<>();
 
@@ -41,9 +40,9 @@ public class CategoriaActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(Categoria categoria) {
-               Intent intent =new Intent(CategoriaActivity.this,signoActivity.class);
-               intent.putExtra("imagenSigno", categoria.getId());
-               intent.putExtra("palabra", categoria.getId()); // Ejemplo de cómo pasar el ID de la categoría
+               Intent intent =new Intent(CategoriaActivity.this, SignoActivity.class);
+               intent.putExtra("imagenSigno", categoria.getImagen());
+               intent.putExtra("palabra", categoria.getNombre()); // Ejemplo de cómo pasar el ID de la categoría
                // Ejemplo de cómo pasar el ID de la categoría
 
                 // Iniciar la nueva Activity

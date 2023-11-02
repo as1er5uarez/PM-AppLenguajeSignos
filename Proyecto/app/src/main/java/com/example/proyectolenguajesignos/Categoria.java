@@ -20,7 +20,16 @@ public class Categoria {
 
     private ArrayList<Palabra> palabras;
 
-    public Categoria(int id,int imagen, String nombre, ArrayList<Palabra> palabras) {
+    private ArrayList<Signo> signos;
+
+    public Categoria(int id, String nombre, int imagen, ArrayList<Signo> signos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.signos = signos;
+    }
+
+    public Categoria(int id, int imagen, String nombre, ArrayList<Palabra> palabras) {
         this.id = id;
         this.imagen=imagen;
         this.nombre = nombre;
