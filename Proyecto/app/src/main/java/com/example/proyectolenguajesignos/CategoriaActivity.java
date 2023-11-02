@@ -41,7 +41,13 @@ public class CategoriaActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(Categoria categoria) {
-                Toast.makeText(CategoriaActivity.this, "Hola", Toast.LENGTH_SHORT).show();
+               Intent intent =new Intent(CategoriaActivity.this,signoActivity.class);
+               intent.putExtra("imagenSigno", categoria.getId());
+               intent.putExtra("palabra", categoria.getId()); // Ejemplo de cómo pasar el ID de la categoría
+               // Ejemplo de cómo pasar el ID de la categoría
+
+                // Iniciar la nueva Activity
+                startActivity(intent);
             }
         });
         // Inicializar el adaptador y configurar el RecyclerView

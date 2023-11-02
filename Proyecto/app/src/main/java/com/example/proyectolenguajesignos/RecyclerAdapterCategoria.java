@@ -21,9 +21,6 @@ public class RecyclerAdapterCategoria extends RecyclerView.Adapter<RecyclerAdapt
         this.categorias = categorias;
         this.listener = listener;
     }
-
-
-
     @NonNull
     @Override
     public RecyclerAdapterCategoria.RecyclerDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -31,7 +28,6 @@ public class RecyclerAdapterCategoria extends RecyclerView.Adapter<RecyclerAdapt
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.categoria_item, parent, false);
         return new RecyclerDataHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapterCategoria.RecyclerDataHolder holder, int position) {
         holder.assignData(categorias.get(position), (OnItemClickListener) listener);

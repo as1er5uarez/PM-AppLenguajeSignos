@@ -7,7 +7,7 @@ public class Categoria {
     // Se puede hacer que Palabra tenga idCategoria directamente y mostrar la imagen controlando si el id es igual al id pulsado
     private int id;
     private String nombre;
-
+    
     private int imagen;
 
     public int getImagen() {
