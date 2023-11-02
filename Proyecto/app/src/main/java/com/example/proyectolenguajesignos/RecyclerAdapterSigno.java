@@ -11,9 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecyclerAdapterSigno extends RecyclerView.Adapter<RecyclerAdapterSigno.RecyclerDataHolder> {
-
-
-   List<Signo> signos;
+    List<Signo> signos;
 
     public RecyclerAdapterSigno(List<Signo> signos) {
         this.signos = signos;
@@ -22,16 +20,15 @@ public class RecyclerAdapterSigno extends RecyclerView.Adapter<RecyclerAdapterSi
     @NonNull
     @Override
     public RecyclerAdapterSigno.RecyclerDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.signo_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.signo_item, null, false);
         return new RecyclerDataHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerDataHolder holder, int position) {
         holder.assignData(signos.get(position));
+
     }
-
-
     @Override
     public int getItemCount() {
         return signos.size();

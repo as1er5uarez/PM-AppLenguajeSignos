@@ -22,18 +22,20 @@ public class Categoria {
 
     private ArrayList<Signo> signos;
 
-    public Categoria(int id, String nombre, int imagen, ArrayList<Signo> signos) {
-        this.id = id;
-        this.nombre = nombre;
-        this.imagen = imagen;
+
+    public ArrayList<Signo> getSignos() {
+        return signos;
+    }
+
+    public void setSignos(ArrayList<Signo> signos) {
         this.signos = signos;
     }
 
-    public Categoria(int id, int imagen, String nombre, ArrayList<Palabra> palabras) {
+    public Categoria(int id, int imagen, String nombre, ArrayList<Signo> signos) {
         this.id = id;
         this.imagen=imagen;
         this.nombre = nombre;
-        this.palabras = palabras;
+       this.signos=signos;
     }
 
     public Categoria() {

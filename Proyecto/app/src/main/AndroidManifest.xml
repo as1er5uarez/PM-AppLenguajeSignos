@@ -27,7 +27,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SignoActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".CategoriaActivity" />
     </application>
 
 </manifest>

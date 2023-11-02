@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,32 +21,33 @@ public class CategoriaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewCategoria);
-
         List<Categoria> categorias=new ArrayList<>();
-
-        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", new ArrayList<Palabra>()));
-        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", new ArrayList<Palabra>()));
+        ArrayList<Signo>signos =new ArrayList<>();
+        signos.add(new Signo(R.drawable.comida2,"comida"));
+        signos.add(new Signo(R.drawable.comida2,"comida"));
+        signos.add(new Signo(R.drawable.comida2,"comida"));
+        signos.add(new Signo(R.drawable.comida2,"comida"));
+        signos.add(new Signo(R.drawable.comida2,"comida"));
+        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1",signos));
+        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos));
+        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1",signos));
+        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2",signos));
+        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1", signos));
+        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos));
+        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", signos));
+        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", signos));
+        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1",signos));
+        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos));
+        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", signos));
+        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", signos));
 
         recyclerDataAdapter = new RecyclerAdapterCategoria(categorias,new RecyclerAdapterCategoria.OnItemClickListener() {
 
             @Override
             public void onItemClick(Categoria categoria) {
                Intent intent =new Intent(CategoriaActivity.this, SignoActivity.class);
-               intent.putExtra("imagenSigno", categoria.getImagen());
-               intent.putExtra("palabra", categoria.getNombre()); // Ejemplo de cómo pasar el ID de la categoría
-               // Ejemplo de cómo pasar el ID de la categoría
 
-                // Iniciar la nueva Activity
+                intent.putParcelableArrayListExtra("signos", categoria.getSignos());
                 startActivity(intent);
             }
         });
