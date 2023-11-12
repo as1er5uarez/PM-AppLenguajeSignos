@@ -23,7 +23,6 @@ public class RecyclerAdapterSigno extends RecyclerView.Adapter<RecyclerAdapterSi
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.signo_item, null, false);
         return new RecyclerDataHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull RecyclerDataHolder holder, int position) {
         holder.assignData(signos.get(position));

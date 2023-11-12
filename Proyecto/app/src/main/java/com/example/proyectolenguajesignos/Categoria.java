@@ -2,7 +2,7 @@ package com.example.proyectolenguajesignos;
 
 import java.util.ArrayList;
 
-public class Categoria {
+public class Categoria   {
     // La clase categoria tiene una propiedad lista de palabras que a ser rellenada identificando que id de categoria tiene
     // Se puede hacer que Palabra tenga idCategoria directamente y mostrar la imagen controlando si el id es igual al id pulsado
     private int id;

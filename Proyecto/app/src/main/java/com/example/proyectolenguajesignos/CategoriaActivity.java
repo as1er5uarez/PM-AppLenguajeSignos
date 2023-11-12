@@ -57,7 +57,7 @@ public class CategoriaActivity extends AppCompatActivity {
         // Inicializar el adaptador y configurar el RecyclerView
         recyclerView.setAdapter(recyclerDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
     }
 }
