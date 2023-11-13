@@ -20,12 +20,14 @@ public class SignoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signo);
         recyclerView = (RecyclerView) findViewById(R.id.rvSigno);
         ArrayList<Signo> signos = getIntent().getParcelableArrayListExtra("signos");
-        List<Signo> signosList = new ArrayList<>(signos);
-        recyclerDataAdapter= new RecyclerAdapterSigno(signosList);
+        List<Signo> signosList = new ArrayList<>();
+        recyclerDataAdapter = new RecyclerAdapterSigno(signosList);
         recyclerView.setAdapter(recyclerDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));

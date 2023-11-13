@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoLenguajeSignos"
         tools:targetApi="31">
-
+       
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -22,12 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CategoriaActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".SignoActivity"
-            android:parentActivityName=".CategoriaActivity" />
+        <activity android:name=".CategoriaActivity" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".SignoActivity" android:parentActivityName=".CategoriaActivity"></activity>
     </application>
 
 </manifest>
