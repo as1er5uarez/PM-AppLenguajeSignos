@@ -29,6 +29,5 @@ public class SignoActivity extends AppCompatActivity {
         recyclerView.setAdapter(recyclerDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
-
     }
 }

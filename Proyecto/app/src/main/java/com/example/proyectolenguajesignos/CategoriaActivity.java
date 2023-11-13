@@ -16,9 +16,12 @@ public class CategoriaActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerAdapterCategoria recyclerDataAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_categoria);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewCategoria);
         List<Categoria> categorias=new ArrayList<>();
@@ -30,7 +33,6 @@ public class CategoriaActivity extends AppCompatActivity {
         signos.add(new Signo(R.drawable.comida2,"comida"));
         ArrayList<Signo>signos1 =new ArrayList<>();
         signos1.add(new Signo(R.drawable.comida2,"comida"));
-
         categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1",signos));
         categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos1));
         categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1",signos));

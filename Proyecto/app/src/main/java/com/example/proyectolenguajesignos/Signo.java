@@ -15,7 +15,6 @@ public class Signo implements Parcelable {
         imagenSigno = in.readInt();
         palabra = in.readString();
     }
-
     public static final Creator<Signo> CREATOR = new Creator<Signo>() {
         @Override
         public Signo createFromParcel(Parcel in) {
