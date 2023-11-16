@@ -20,8 +20,6 @@ public class SignoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signo);
         recyclerView = (RecyclerView) findViewById(R.id.rvSigno);
