@@ -12,7 +12,6 @@ public class Datos {
 
 
 
-
     return  categorias;
     }
 
