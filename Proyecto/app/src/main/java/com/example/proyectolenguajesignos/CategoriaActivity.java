@@ -61,5 +61,7 @@ public class CategoriaActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
 
+
+
     }
 }
