@@ -5,27 +5,24 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-public class Signo implements Parcelable {
+import com.example.proyectolenguajesignos.App.MyapplicationSigno;
+
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Signo  extends RealmObject {
+
+    @PrimaryKey
+    private int id;
 
     private  int imagenSigno;
 
     private  String palabra;
 
-    protected Signo(Parcel in) {
-        imagenSigno = in.readInt();
-        palabra = in.readString();
-    }
-    public static final Creator<Signo> CREATOR = new Creator<Signo>() {
-        @Override
-        public Signo createFromParcel(Parcel in) {
-            return new Signo(in);
-        }
+    public Signo(){
 
-        @Override
-        public Signo[] newArray(int size) {
-            return new Signo[size];
-        }
-    };
+    }
+
 
     public int getImagenSigno() {
         return imagenSigno;
@@ -44,18 +41,10 @@ public class Signo implements Parcelable {
     }
 
     public Signo(int imagenSigno, String palabra) {
+        this.id= MyapplicationSigno.signoID.incrementAndGet();
         this.imagenSigno = imagenSigno;
         this.palabra = palabra;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(@NonNull Parcel dest, int flags) {
-        dest.writeInt(imagenSigno);
-        dest.writeString(palabra);
-    }
 }

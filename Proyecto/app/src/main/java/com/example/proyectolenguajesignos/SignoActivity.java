@@ -41,7 +41,6 @@ public class SignoActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvSigno);
 
         // Obtener la lista de signos de la actividad anterior
-        ArrayList<Signo> signos = getIntent().getParcelableArrayListExtra("signos");
 
         List<Signo> signosList = new ArrayList<>();
         recyclerDataAdapter = new RecyclerAdapterSigno(signosList);
@@ -58,10 +57,10 @@ public class SignoActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         // Agregar los signos a la lista
-        if (signos != null) {
+        /*if (signos != null) {
             signosList.addAll(signos);
             recyclerDataAdapter.notifyDataSetChanged();
-        }
+        }*/
     }
 
     private void mostrarPalabras(String palabras) {

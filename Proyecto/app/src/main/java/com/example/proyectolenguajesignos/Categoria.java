@@ -1,10 +1,17 @@
 package com.example.proyectolenguajesignos;
 
+import com.example.proyectolenguajesignos.App.MyApplication;
+
 import java.util.ArrayList;
 
-public class Categoria   {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Categoria  extends RealmObject {
     // La clase categoria tiene una propiedad lista de palabras que a ser rellenada identificando que id de categoria tiene
     // Se puede hacer que Palabra tenga idCategoria directamente y mostrar la imagen controlando si el id es igual al id pulsado
+
+    @PrimaryKey
     private int id;
     private String nombre;
     
@@ -18,7 +25,6 @@ public class Categoria   {
         this.imagen = imagen;
     }
 
-    private ArrayList<Palabra> palabras;
 
     private ArrayList<Signo> signos;
 
@@ -31,11 +37,11 @@ public class Categoria   {
         this.signos = signos;
     }
 
-    public Categoria(int id, int imagen, String nombre, ArrayList<Signo> signos) {
-        this.id = id;
+    public Categoria(int imagen, String nombre, ArrayList<Signo> signos) {
+        this.id = MyApplication.categoriaID.incrementAndGet();
         this.imagen=imagen;
         this.nombre = nombre;
-       this.signos=signos;
+        this.signos=signos;
     }
 
     public Categoria() {
@@ -57,11 +63,5 @@ public class Categoria   {
         this.nombre = nombre;
     }
 
-    public ArrayList<Palabra> getPalabras() {
-        return palabras;
-    }
 
-    public void setPalabras(ArrayList<Palabra> palabras) {
-        this.palabras = palabras;
-    }
 }

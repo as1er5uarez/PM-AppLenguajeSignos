@@ -16,12 +16,9 @@ public class CategoriaActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RecyclerAdapterCategoria recyclerDataAdapter;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_categoria);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewCategoria);
         List<Categoria> categorias=new ArrayList<>();
@@ -33,35 +30,30 @@ public class CategoriaActivity extends AppCompatActivity {
         signos.add(new Signo(R.drawable.comida2,"comida"));
         ArrayList<Signo>signos1 =new ArrayList<>();
         signos1.add(new Signo(R.drawable.ropa1,"ropa"));
-        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1",signos));
-        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos1));
-        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1",signos));
-        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2",signos1));
-        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1", signos));
-        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos1));
-        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", signos));
-        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", signos1));
-        categorias.add(new Categoria(1,R.drawable.comida2 ,"Categoría 1",signos));
-        categorias.add(new Categoria(2,R.drawable.ropa1 ,"Categoría 2", signos1));
-        categorias.add(new Categoria(3,R.drawable.comida2 ,"Categoría 1", signos));
-        categorias.add(new Categoria(4,R.drawable.ropa1 ,"Categoría 2", signos));
-
+        categorias.add(new Categoria(R.drawable.comida2 ,"Categoría 1",signos));
+        categorias.add(new Categoria(R.drawable.ropa1 ,"Categoría 2", signos1));
+        categorias.add(new Categoria(R.drawable.comida2 ,"Categoría 1",signos));
+        categorias.add(new Categoria(R.drawable.ropa1 ,"Categoría 2",signos1));
+        categorias.add(new Categoria(R.drawable.comida2 ,"Categoría 1", signos));
+        categorias.add(new Categoria(R.drawable.ropa1 ,"Categoría 2", signos1));
+        categorias.add(new Categoria(R.drawable.comida2 ,"Categoría 1", signos));
+        categorias.add(new Categoria(R.drawable.ropa1 ,"Categoría 2", signos1));
+        categorias.add(new Categoria(R.drawable.comida2 ,"Categoría 1",signos));
+        categorias.add(new Categoria(R.drawable.ropa1 ,"Categoría 2", signos1));
+        categorias.add(new Categoria(R.drawable.comida2 ,"Categoría 1", signos));
+        categorias.add(new Categoria(R.drawable.ropa1 ,"Categoría 2", signos));
         recyclerDataAdapter = new RecyclerAdapterCategoria(categorias,new RecyclerAdapterCategoria.OnItemClickListener() {
 
             @Override
             public void onItemClick(Categoria categoria) {
                Intent intent =new Intent(CategoriaActivity.this, SignoActivity.class);
-
-                intent.putParcelableArrayListExtra("signos", categoria.getSignos());
+                intent.putExtra("categoria", categoria.getId());
                 startActivity(intent);
             }
         });
-        // Inicializar el adaptador y configurar el RecyclerView
+
         recyclerView.setAdapter(recyclerDataAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
-
-
-
     }
 }
