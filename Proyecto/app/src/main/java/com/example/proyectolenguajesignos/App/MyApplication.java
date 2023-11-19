@@ -2,7 +2,9 @@ package com.example.proyectolenguajesignos.App;
 
 import android.app.Application;
 
-import com.example.proyectolenguajesignos.Categoria;
+import com.example.proyectolenguajesignos.Models.Categoria;
+import com.example.proyectolenguajesignos.Models.Signo;
+import com.example.proyectolenguajesignos.Models.Subcategoria;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -14,6 +16,10 @@ import io.realm.RealmResults;
 public class MyApplication extends Application {
 
     public static AtomicInteger categoriaID = new AtomicInteger();
+    public static AtomicInteger signoID = new AtomicInteger();
+
+    public static AtomicInteger subCategoriaID = new AtomicInteger();
+
 
     @Override
     public void onCreate() {
@@ -21,6 +27,8 @@ public class MyApplication extends Application {
         setUpRealmConfig();
         Realm realm = Realm.getDefaultInstance();
         categoriaID = getIdByTable(realm, Categoria.class);
+        signoID =getIdByTable(realm, Signo.class);
+        subCategoriaID=getIdByTable(realm, Subcategoria.class);
         realm.close();
     }
 

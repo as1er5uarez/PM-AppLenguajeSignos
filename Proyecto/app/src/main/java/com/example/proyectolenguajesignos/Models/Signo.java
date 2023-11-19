@@ -1,11 +1,6 @@
-package com.example.proyectolenguajesignos;
+package com.example.proyectolenguajesignos.Models;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import androidx.annotation.NonNull;
-
-import com.example.proyectolenguajesignos.App.MyapplicationSigno;
+import com.example.proyectolenguajesignos.App.MyApplication;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
@@ -20,9 +15,7 @@ public class Signo  extends RealmObject {
     private  String palabra;
 
     public Signo(){
-
     }
-
 
     public int getImagenSigno() {
         return imagenSigno;
@@ -41,7 +34,7 @@ public class Signo  extends RealmObject {
     }
 
     public Signo(int imagenSigno, String palabra) {
-        this.id= MyapplicationSigno.signoID.incrementAndGet();
+        this.id= MyApplication.signoID.incrementAndGet();
         this.imagenSigno = imagenSigno;
         this.palabra = palabra;
     }

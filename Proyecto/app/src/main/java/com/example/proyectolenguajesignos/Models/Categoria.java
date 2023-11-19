@@ -1,9 +1,10 @@
-package com.example.proyectolenguajesignos;
+package com.example.proyectolenguajesignos.Models;
 
 import com.example.proyectolenguajesignos.App.MyApplication;
 
 import java.util.ArrayList;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -16,7 +17,21 @@ public class Categoria  extends RealmObject {
     private String nombre;
     
     private int imagen;
+    private RealmList<Subcategoria> subcategorias;
 
+    public RealmList<Subcategoria> getSubcategorias() {
+        return subcategorias;
+    }
+
+    public void setSubcategorias(RealmList<Subcategoria> subcategorias) {
+        this.subcategorias = subcategorias;
+    }
+
+    public Categoria(String nombre, int imagen, RealmList<Subcategoria> subcategorias) {
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.subcategorias = subcategorias;
+    }
     public int getImagen() {
         return imagen;
     }
@@ -27,7 +42,6 @@ public class Categoria  extends RealmObject {
 
 
     private ArrayList<Signo> signos;
-
 
     public ArrayList<Signo> getSignos() {
         return signos;

@@ -2,15 +2,13 @@ package com.example.proyectolenguajesignos;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.text.TextUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.example.proyectolenguajesignos.Models.Signo;
 
 import java.util.ArrayList;
 import java.util.Collections;
